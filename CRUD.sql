@@ -52,4 +52,38 @@ CREATE TABLE cats
   FROM cats;
 
   SELECT cat_id, name, age, breed
-  FROM cats; 
+  FROM cats;
+
+  -- Introduction to WHERE
+  -- Select by age:
+
+  SELECT *
+  FROM cats
+  WHERE age=4;
+
+  -- Select by name:
+
+  SELECT *
+  FROM cats
+  WHERE name='Egg';
+
+  -- Notice how it deals with case:
+
+  SELECT *
+  FROM cats
+  WHERE name='egG';
+
+  -- Challenges CRUD WHERE
+  SELECT cat_id
+  FROM cats;
+
+  SELECT name, breed
+  FROM cats;
+
+  SELECT name, age
+  FROM cats
+  WHERE breed='tabby';
+
+  SELECT cat_id, age
+  FROM cats
+  WHERE cat_id = age;
