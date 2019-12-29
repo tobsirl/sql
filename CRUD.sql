@@ -87,3 +87,13 @@ CREATE TABLE cats
   SELECT cat_id, age
   FROM cats
   WHERE cat_id = age;
+
+  -- Introduction to Aliases
+
+  SELECT cat_id AS id, name
+  FROM cats;
+
+  SELECT name AS 'cat name', breed AS 'kitty breed'
+  FROM cats;
+
+  DESC cats;
