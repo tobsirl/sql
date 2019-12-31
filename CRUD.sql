@@ -109,3 +109,20 @@ CREATE TABLE cats
   UPDATE cats SET breed='British Shorthair' WHERE name='Ringo';
 
   UPDATE cats SET age=12 WHERE breed='Maine Coon';
+
+  -- Delete Data
+  DELETE FROM cats WHERE name='Egg';
+
+  SELECT *
+  FROM cats;
+
+  SELECT *
+  FROM cats
+  WHERE name='egg';
+
+  DELETE FROM cats WHERE name='egg';
+
+  SELECT *
+  FROM cats;
+
+  DELETE FROM cats;
