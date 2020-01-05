@@ -131,29 +131,50 @@ FROM books;
 -- Using REVERSE
 
 SELECT REVERSE('Hello World');
- 
+
 SELECT REVERSE('meow meow');
- 
-SELECT REVERSE(author_fname) FROM books;
- 
+
+SELECT REVERSE(author_fname)
+FROM books;
+
 SELECT CONCAT('woof', REVERSE('woof'));
- 
-SELECT CONCAT(author_fname, REVERSE(author_fname)) FROM books;
+
+SELECT CONCAT(author_fname, REVERSE(author_fname))
+FROM books;
 
 -- Using CHAR_LENGTH
 SELECT CHAR_LENGTH('Hello World');
- 
-SELECT author_lname, CHAR_LENGTH(author_lname) AS 'length' FROM books;
- 
-SELECT CONCAT(author_lname, ' is ', CHAR_LENGTH(author_lname), ' characters long') FROM books;
+
+SELECT author_lname, CHAR_LENGTH(author_lname) AS 'length'
+FROM books;
+
+SELECT CONCAT(author_lname, ' is ', CHAR_LENGTH(author_lname), ' characters long')
+FROM books;
 
 -- Using UPPER and LOWER
 SELECT UPPER('Hello World');
- 
+
 SELECT LOWER('Hello World');
- 
-SELECT UPPER(title) FROM books;
- 
-SELECT CONCAT('MY FAVORITE BOOK IS ', UPPER(title)) FROM books;
- 
-SELECT CONCAT('MY FAVORITE BOOK IS ', LOWER(title)) FROM books;
+
+SELECT UPPER(title)
+FROM books;
+
+SELECT CONCAT('MY FAVORITE BOOK IS ', UPPER(title))
+FROM books;
+
+SELECT CONCAT('MY FAVORITE BOOK IS ', LOWER(title))
+FROM books;
+
+-- String Function Challenges
+SELECT REVERSE(UPPER("Why does my cat look at me with such hatred?")) AS "Reverse and Uppercase";
+
+SELECT
+  REPLACE
+  (
+  CONCAT('I', ' ', 'like', ' ', 'cats'),
+  ' ',
+  '-'
+  );
+-- I-like-cats
+
+SELECT REPLACE(title, ' ', '->') AS 'title' FROM books;
