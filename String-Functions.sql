@@ -178,3 +178,5 @@ SELECT
 -- I-like-cats
 
 SELECT REPLACE(title, ' ', '->') AS 'title' FROM books;
+
+SELECT author_lname AS 'forwards', REVERSE(author_lname) AS 'backwards' FROM books;
