@@ -138,3 +138,24 @@ FROM books LIMIT
 SELECT title
 FROM books LIMIT
 5, 50;
+
+-- Using LIKE for better searches
+SELECT title, author_fname
+FROM books
+WHERE author_fname LIKE '%da%';
+
+SELECT title, author_fname
+FROM books
+WHERE author_fname LIKE 'da%';
+
+SELECT title
+FROM books
+WHERE  title LIKE 'the';
+
+SELECT title
+FROM books
+WHERE  title LIKE '%the';
+
+SELECT title
+FROM books
+WHERE title LIKE '%the%';
