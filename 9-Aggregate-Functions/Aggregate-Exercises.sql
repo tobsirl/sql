@@ -15,3 +15,20 @@ FROM books;
 SELECT CONCAT(author_lname, ' ', author_fname) AS 'Name', AVG(released_year)
 FROM books
 GROUP BY author_lname, author_fname;
+
+-- Exercise 5 Find the fullname of the author who wrote the longest book
+SELECT CONCAT(author_fname, ' ', author_lname) AS Fullname
+FROM books
+WHERE pages = (SELECT MAX(pages) AS Pages
+FROM books);
+
+-- Second solution
+SELECT CONCAT(author_fname, ' ', author_lname) AS Fullname
+FROM books
+ORDER BY pages DESC LIMIT 1;
+
+-- Exercise 6
+SELECT released_year
+AS year, COUNT
+(released_year) AS '# books', AVG
+(pages) AS 'avg pages' FROM books GROUP BY released_year ORDER BY released_year;
