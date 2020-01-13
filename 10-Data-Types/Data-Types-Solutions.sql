@@ -12,3 +12,11 @@ CREATE TABLE inventory
   price DECIMAL(8,2),
   quantity INT
 );
+
+-- Exercise 3 - What's the difference between DATETIME and TIMESTAMP?
+-- Both store date and time information 
+-- DATETIME take twice as much space as TIMESTAMP
+-- TIMESTAMP is mainly used for metadata
+
+-- Exercise 4 - Print Out The Current Time
+SELECT CURTIME();
