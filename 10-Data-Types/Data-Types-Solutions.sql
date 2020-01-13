@@ -20,3 +20,11 @@ CREATE TABLE inventory
 
 -- Exercise 4 - Print Out The Current Time
 SELECT CURTIME();
+
+-- Exercise 5 - Print Out The Current Date (but not time)
+SELECT CURDATE();
+
+-- Exercise 6 - Print Out The Current Day Of The Week (number)
+SELECT DAYOFWEEK(CURDATE());
+
+SELECT DAYOFWEEK(NOW());
