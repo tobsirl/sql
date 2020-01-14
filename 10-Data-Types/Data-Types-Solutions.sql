@@ -28,3 +28,9 @@ SELECT CURDATE();
 SELECT DAYOFWEEK(CURDATE());
 
 SELECT DAYOFWEEK(NOW());
+
+-- Exercise 7 - Print Out The Current Day Of The Week (day name)
+SELECT DATE_FORMAT(NOW(), '%W');
+
+-- Exercise 8 - Print out the current day and time using this format
+SELECT DATE_FORMAT(NOW(), '%m/%d/%Y');
