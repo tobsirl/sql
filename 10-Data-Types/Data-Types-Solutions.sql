@@ -34,3 +34,14 @@ SELECT DATE_FORMAT(NOW(), '%W');
 
 -- Exercise 8 - Print out the current day and time using this format
 SELECT DATE_FORMAT(NOW(), '%m/%d/%Y');
+
+-- Exercise 9 - Print out the current day and time using this format
+SELECT DATE_FORMAT(NOW(), '%M %D at %h:%m');
+
+-- Exercise 10 - Create a tweets table that stores
+CREATE TABLE tweets
+(
+  content VARCHAR(140),
+  username VARCHAR(20),
+  created_at TIMESTAMP DEFAULT NOW()
+);
