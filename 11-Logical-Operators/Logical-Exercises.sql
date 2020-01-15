@@ -26,3 +26,13 @@ WHERE author_lname='Eggers' OR author_lname='Chabon';
 SELECT title, author_lname, released_year
 FROM books
 WHERE author_lname='Lahiri' AND released_year > 2000;
+
+-- Exercise 5 - Select All books with page counts between 100 and 200
+SELECT title, author_lname, released_year, pages
+FROM books
+WHERE pages BETWEEN 100 AND 200;
+
+-- Exercise 6 - Select all books where author_lname  starts with a 'C' or an 'S''
+SELECT title, author_lname, released_year
+FROM books
+WHERE author_lname LIKE 'C%' OR author_lname LIKE 'S%';
