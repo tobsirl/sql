@@ -34,3 +34,10 @@ CREATE TABLE students
     (2, 'Russian Lit Through The Ages', 94),
     (2, 'De Montaigne and The Art of The Essay', 98),
     (4, 'Borges and Magical Realism', 89);
+
+-- Exercise 2 
+  SELECT first_name, title, grade
+  FROM students
+    INNER JOIN papers
+    ON students.id = papers.student_id
+  ORDER BY grade DESC;
