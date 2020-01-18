@@ -41,3 +41,9 @@ CREATE TABLE students
     INNER JOIN papers
     ON students.id = papers.student_id
   ORDER BY grade DESC;
+
+-- Exercise 3 - Left Join
+SELECT first_name, title, grade
+FROM students
+LEFT JOIN papers
+ON students.id = papers.student_id;
