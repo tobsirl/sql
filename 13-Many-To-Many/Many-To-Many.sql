@@ -1,4 +1,5 @@
 -- Create tables
+-- CREATING THE REVIEWERS TABLE
 CREATE TABLE reviewers
 (
   id INT
@@ -9,6 +10,7 @@ CREATE TABLE reviewers
   (100)
 );
 
+  -- CREATING THE SERIES TABLE
   CREATE TABLE series
   (
     id INT
@@ -21,6 +23,7 @@ CREATE TABLE reviewers
     (100)
 );
 
+    -- CREATING THE REVIEWS TABLE
     CREATE TABLE reviews
     (
       id INT
@@ -37,6 +40,7 @@ CREATE TABLE reviewers
       (id)
 );
 
+      -- INSERTING A BUNCH OF DATA
       INSERT INTO series
         (title, released_year, genre)
       VALUES
