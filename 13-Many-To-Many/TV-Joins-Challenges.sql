@@ -11,3 +11,8 @@ FROM series
   INNER JOIN reviews ON reviews.series_id = series.id
 GROUP BY series_id
 ORDER BY avg_rating;
+
+-- Exercise 3
+SELECT first_name, last_name, rating
+FROM reviewers
+  INNER JOIN reviews ON reviewers.id = reviews.reviewer_id;
