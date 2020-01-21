@@ -23,3 +23,10 @@ FROM series
   LEFT JOIN reviews
   ON series.id = reviews.series_id
 WHERE rating IS NULL;
+
+-- Exercise 5 Genre Average Ratings Using ROUND
+SELECT genre,
+  ROUND(AVG(rating), 2) AS avg_rating
+FROM series
+  JOIN reviews ON series.id = reviews.series_id
+GROUP BY genre;
