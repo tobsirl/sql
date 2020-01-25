@@ -32,7 +32,7 @@ LEFT JOIN photos
     ON users.id = photos.user_id
 WHERE photos.id IS NULL;
 
---  Identify most popular photo (and user who created it)
+-- Exercise 4 - Identify most popular photo (and user who created it)
 SELECT
   username,
   photos.id,
@@ -46,3 +46,11 @@ FROM photos
 GROUP BY photos.id
 ORDER BY total DESC
 LIMIT 1;
+
+-- Exercise 5 - Calculate average number of photos per user
+SELECT (SELECT Count
+(*) 
+        FROM   photos) /
+(SELECT Count(*)
+FROM users)
+AS avg; 
