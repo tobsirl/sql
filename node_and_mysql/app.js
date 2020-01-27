@@ -9,9 +9,12 @@ const db = mysql.createConnection({
 
 // db.query('CREATE DATABASE join_us');
 // db.query('USE join_us');
-db.query('SELECT CURDATE()', (error, results, fields) => {
+
+const sqlQuery = 'SELECT CURTIME() AS time, CURDATE() AS date, NOW() AS now';
+
+db.query(sqlQuery, (error, results, fields) => {
   if (error) console.warn(error);
-  console.log(results);
+  console.log(results[0]);
 });
 
 db.end();
