@@ -13,13 +13,11 @@ const db = mysql.createConnection({
 // db.query('CREATE DATABASE join_us');
 // db.query('USE join_us');
 
-const sqlQuery = 'SELECT CURTIME() AS time, CURDATE() AS date, NOW() AS now';
+const sqlQuery = 'SELECT COUNT(*) AS total FROM users';
 
 db.query(sqlQuery, (error, results, fields) => {
   if (error) console.warn(error);
-  console.log(results[0].time);
-  console.log(results[0].date);
-  console.log(results[0].now);
+  console.log(results[0].total);
 });
 
 db.end();
