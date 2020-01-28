@@ -37,8 +37,13 @@ WHERE created_at =
 SELECT MIN(created_at)
 FROM users);
 
--- Exercise - Users According To The Month They Joined
+-- Exercise 3 - Users According To The Month They Joined
 SELECT DATE_FORMAT(created_at, "%M") AS month, COUNT(*) AS count
 FROM users
 GROUP BY month
 ORDER BY count DESC;
+
+-- Exercise 4 - Count Number of Users With Yahoo Emails
+SELECT COUNT(*) AS yahoo_users
+FROM users
+WHERE email LIKE '%@yahoo.com%';
