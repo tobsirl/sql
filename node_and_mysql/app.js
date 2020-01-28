@@ -21,23 +21,36 @@ const db = mysql.createConnection({
 //   console.log(results[0].total);
 // });
 
-
 // INSERTING DATA
 // const q = 'INSERT INTO users (email) VALUES ("rusty_the_dog@gmail.com")';
- 
+
 // db.query(q, function (error, results, fields) {
 //   if (error) throw error;
 //   console.log(results);
 // });
 
-const person = {
-  email: faker.internet.email(),
-  created_at: faker.date.past()
-};
+// INSERTING DATA USING FAKER
+// const person = {
+//   email: faker.internet.email(),
+//   created_at: faker.date.past()
+// };
 
-db.query('INSERT INTO users SET ?', person, function(err, result) {
-if (err) throw err;
-console.log(result);
+// db.query('INSERT INTO users SET ?', person, function(err, result) {
+// if (err) throw err;
+// console.log(result);
+// });
+
+let data = [];
+
+for (let i = 0; i < 500; i++) {
+  data.push([faker.internet.email(), faker.date.past()]);
+}
+
+const sqlQuery = 'INSERT INTO users (email, created_at) VALUES ?';
+
+db.query(sqlQuery, [data], (err, result) => {
+  if (err) throw err;
+  console.log(result);
 });
 
 db.end();
