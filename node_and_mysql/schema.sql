@@ -14,3 +14,25 @@ SELECT DATE_FORMAT(created_at,  "%M %D %Y") AS earliest_date
 FROM users
 ORDER BY earliest_date
 LIMIT 1;
+
+SELECT DATE_FORMAT
+(MIN
+(created_at),  "%M %D %Y") AS earliest_date
+FROM users;
+
+-- Exercise 2 - Find Email Of The First (Earliest)User
+SELECT email, created_at
+FROM users
+WHERE created_at = (
+SELECT created_at
+FROM users
+ORDER BY created_at 
+LIMIT 1);
+
+SELECT email
+, created_at
+FROM users
+WHERE created_at =
+(
+SELECT MIN(created_at)
+FROM users);
