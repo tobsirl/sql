@@ -47,3 +47,15 @@ ORDER BY count DESC;
 SELECT COUNT(*) AS yahoo_users
 FROM users
 WHERE email LIKE '%@yahoo.com%';
+
+-- Exercise 5 - Calculate Total Number of Users for Each Email Host
+SELECT
+  CASE
+        WHEN email LIKE '%@yahoo.com%' THEN 'yahoo'
+        WHEN email LIKE '%@gmail.com%' THEN 'gmail'
+        WHEN email LIKE '%@hotmail.com%' THEN 'hotmail'
+        ELSE 'other'
+    END as provider,
+  COUNT(*) AS total_users
+FROM users
+GROUP BY provider;
