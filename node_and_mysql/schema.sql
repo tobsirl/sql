@@ -36,3 +36,9 @@ WHERE created_at =
 (
 SELECT MIN(created_at)
 FROM users);
+
+-- Exercise - Users According To The Month They Joined
+SELECT DATE_FORMAT(created_at, "%M") AS month, COUNT(*) AS count
+FROM users
+GROUP BY month
+ORDER BY count DESC;
