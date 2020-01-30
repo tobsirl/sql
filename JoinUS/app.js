@@ -15,7 +15,11 @@ const db = mysql.createConnection({
 });
 
 app.get('/', (req, res) => {
-  res.status(200).send('Hello from the web app!');
+  db.query('SELECT COUNT(*) AS total FROM users', (err, results) => {
+    if (err) console.warn(err);
+    console.log(results);
+    res.status(200).send(`We have ${results[0].total} users in our database!`);
+  });
 });
 
 app.get('/joke', (req, res) => {
