@@ -4,6 +4,8 @@ require('dotenv').config();
 
 const app = express();
 
+app.set('view engine', 'ejs');
+
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 
 // db connection
