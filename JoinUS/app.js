@@ -8,6 +8,7 @@ app.set('view engine', 'ejs');
 
 // Body parser, reading data from the body into req.body
 app.use(express.urlencoded());
+app.use(express.static(__dirname + '/public'));
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 
