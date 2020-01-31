@@ -6,6 +6,9 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
+// Body parser, reading data from the body into req.body
+app.use(express.urlencoded());
+
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 
 // db connection
@@ -23,6 +26,12 @@ app.get('/', (req, res) => {
     res.render('home', { total });
     // res.status(200).send(`We have ${results[0].total} users in our database!`);
   });
+});
+
+app.post('/register', (req, res) => {
+  const data = { email: req.body.email };
+  console.log(req.body);
+  res.send(data);
 });
 
 app.get('/joke', (req, res) => {
