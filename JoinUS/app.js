@@ -29,9 +29,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-  const data = { email: req.body.email };
-  console.log(req.body);
-  res.send(data);
+  const email = { email: req.body.email };
+  db.query('INSERT INTO users SET ?', email, (err, result) => {
+    if (err) console.warn(err);
+    res.redirect('/');
+  });
 });
 
 app.get('/joke', (req, res) => {
