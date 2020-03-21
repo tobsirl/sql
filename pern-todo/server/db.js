@@ -16,3 +16,5 @@ const pool = new Pool({
   port: POST_PORT,
   database: POST_DATABASE
 });
+
+module.exports = pool;
