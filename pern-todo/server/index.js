@@ -60,6 +60,25 @@ app.get('/todos/:id', async (req, res) => {
 });
 
 // Update a todo
+app.put('/todos/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { description } = req.body;
+
+    const updateTodo = await pool.query(
+      'UPDATE todo SET description = $1 WHERE todo_id = $2 RETURNING *',
+      [description, id]
+    );
+
+    res.status(200).json({
+      status: 'Success',
+      data: updateTodo.rows[0]
+    });
+
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
 // Delete a todo
 
@@ -68,6 +87,7 @@ app.all('*', (req, res, next) => {
     status: 'failed',
     data: `Can't find ${req.originalUrl} on this server!`
   });
+  next();
 });
 
 const PORT = process.env.PORT;
