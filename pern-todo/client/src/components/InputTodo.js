@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react';
 
 function InputTodo() {
+  const [description, setDescription] = useState('');
+
   return (
-    <div>
-      <h1>Input Todo</h1>
-    </div>
-  )
+    <Fragment>
+      <h1 className="text-center mt-5">Pern Todo List</h1>
+      <form className="d-flex mt-5">
+        <input
+          type="text"
+          value={description}
+          className="form-control"
+          onChange={e => setDescription(e.target.value)}
+        />
+        <button className="btn btn-success">Add</button>
+      </form>
+    </Fragment>
+  );
 }
 
-export default InputTodo
+export default InputTodo;
